@@ -3,8 +3,8 @@ IMAGE_NAME = my-debian-apache2
 CONTAINER_NAME = my-debian-apache2-container
 PORT = 8888
 HOST_WWW_DIR = $(PWD)/www
-ACCESS_KEY_ID="01f2429d-6a91-4dcb-bfea-f50a7b6cc646"
-SECRET_ACCESS_KEY="44FjI7bowVZH21hbW8-OplWZe1IBewHRK2UEtjYcIGc"
+ACCESS_KEY_ID="YOUR_ACCES"
+SECRET_ACCESS_KEY="YOUR_SECRET"
 
 
 # Default target
