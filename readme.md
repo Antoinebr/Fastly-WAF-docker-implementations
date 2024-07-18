@@ -21,12 +21,12 @@ In each folder, you will find a Makefile.sample that you can customize. Of cours
 
 
 ## Variables
-- **IMAGE_NAME**: Name of the Docker image to be built (`debian-sigsci-agent`).
-- **CONTAINER_NAME**: Name of the Docker container to be created (`debian-sigsci-agent-container`).
-- **PORT**: Port number to be used for the container (`8345`).
-- **HOST_WWW_DIR**: Directory on the host machine to be mounted as a volume in the container (`$(PWD)/www`).
-- **ACCESS_KEY_ID**: Access key ID for environment variable (`qssqs-sd-sddsa-dd`).
-- **SECRET_ACCESS_KEY**: Secret access key for environment variable (`sqdqdsqdsqs-OplWZe1IBew999SJDScIGc`).
+- **IMAGE_NAME**: Name of the Docker image to be built e.g : (`debian-sigsci-agent`).
+- **CONTAINER_NAME**: Name of the Docker container to be created e.g :(`debian-sigsci-agent-container`).
+- **PORT**: Port number to be used for the container e.g : (`8345`).
+- **HOST_WWW_DIR**: Directory on the host machine to be mounted as a volume in the container e.g : (`$(PWD)/www`).
+- **ACCESS_KEY_ID**: Access key ID for environment variable e.g : (`qssqs-sd-sddsa-dd`).
+- **SECRET_ACCESS_KEY**: Secret access key for environment variable e.g : (`sqdqdsqdsqs-OplWZe1IBew999SJDScIGc`).
 
 ## Commands
 
