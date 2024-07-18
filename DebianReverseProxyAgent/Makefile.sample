@@ -1,0 +1,67 @@
+# Variables
+IMAGE_NAME = debian-sigsci-agent
+CONTAINER_NAME = debian-sigsci-agent-container
+PORT = 8345
+HOST_WWW_DIR = $(PWD)/www
+ACCESS_KEY_ID="YOUR_OWN_ACCESS_KEY_HERE"
+SECRET_ACCESS_KEY="YOUR_OWN_SECRET_ACCCESS_KEY_HERE"
+
+# Default target
+.PHONY: all
+all: build run
+
+# Build the Docker image
+.PHONY: build
+build:
+	docker build -t $(IMAGE_NAME) .
+
+# Run the Docker container with a volume mount
+# docker run -d -p $(PORT):80 --name $(CONTAINER_NAME) -v $(HOST_WWW_DIR):/var/www/html $(IMAGE_NAME)
+.PHONY: run
+run:
+	docker run -e ACCESS_KEY_ID="$(ACCESS_KEY_ID)" -e SECRET_ACCESS_KEY="$(SECRET_ACCESS_KEY)" -d -p $(PORT):80 --name $(CONTAINER_NAME) -v $(HOST_WWW_DIR):/var/www/html $(IMAGE_NAME)
+
+# Start the Docker container
+.PHONY: start
+start:
+	docker start $(CONTAINER_NAME)
+
+
+# Stop the Docker container
+.PHONY: stop
+stop:
+	docker stop $(CONTAINER_NAME)
+
+# Remove the Docker container
+.PHONY: rm
+rm:
+	docker rm $(CONTAINER_NAME)
+
+# Stop and remove the Docker container
+.PHONY: clean
+clean: stop rm
+
+# Remove the Docker image
+.PHONY: rmi
+rmi:
+	docker rmi $(IMAGE_NAME)
+
+# View logs from the Docker container
+.PHONY: logs
+logs:
+	docker logs -f $(CONTAINER_NAME)
+
+# Shell into the running Docker container
+.PHONY: shell
+shell:
+	docker exec -it $(CONTAINER_NAME) /bin/bash
+
+# List all Docker images
+.PHONY: images
+images:
+	docker images
+
+# List all Docker containers
+.PHONY: ps
+ps:
+	docker ps -a
