@@ -1,7 +1,5 @@
 # Fastly WAF mode demo 
 
-Here's the corrected text:
-
 
 
 This repository gathers different on-premise implementations of the Fastly WAF. You will find in the different folders a Debian setup with Apache, an Nginx setup with Ubuntu, and one with a Node.js app and the agent set up as a reverse proxy.
